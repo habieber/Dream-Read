@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const booksCtrl = require('../controllers/books')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+//everything starts with /books
+
+// Get /books
+router.get('/', booksCtrl.index);
+
+//GET /books/new
+router.get('/new', booksCtrl.new);
+
+//POST /books
+router.post('/', booksCtrl.create)
+
 
 module.exports = router;

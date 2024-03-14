@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<h2>Add a Book to your shelf</h2>
+<form action="/books" method="POST">
+<label>Title:
+    <input type="text" name="title">
+</label><br>
+<label>Author:
+    <input type="text" name="author">
+</label><br>
+<label>Year Published:
+    <input type="number" name="datePublished">
+</label><br>
+<label>Pages:
+    <input type="number" name="pageCount">
+</label><br>
+<label>Priority:
+<select name="priority">
+    <option value="low" selected>Low</option>
+    <option value="med">Med</option>
+    <option value="high">High</option>
+</select>
+</label><br>
+<label>Comment:
+    <input type="text" name="comments" placeholder="reccommended by mom">
+</label><br>
+  <button type="submit">Add Book</button>
+</form>
+
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year Published</th>
+      <th>Pages</th>
+      <th>Date Added</th>
+      <th>Priority</th>
+      <th>Comments</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.forEach(function(b) { %>
+      <tr>
+        <td><%= b.title %></td>
+        <td><%= b.author %></td>
+        <td><%= b.datePublished %></td>
+        <td><%= b.pageCount %></td>
+        <td><%= b.dateAdded %></td>
+        <td><%= b.priority %></td>
+        <td><%= b.comments %></td>
+        <td><a href="/books/<%= b._id %>">Details</a></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
