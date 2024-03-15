@@ -35,15 +35,15 @@ async function deleteComment(req, res) {
 
 async function edit(req, res) {
     const book = await Book.findOne({ 'comments._id': req.params.id });
-    const comment = book.comments
+    const comment = book.comments.filter((c) => c._id.toString() === req.params.id.toString())
     res.render('comments/edit', { title: 'Change Comment', book, comment })
 }
 
 async function update(req, res) {
     console.log('inside the updated function')
-    const book = await Book.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id });
-    console.log(book)
-    console.log(req.params.id)
+    // const book = await Book.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id });
+    // console.log(book)
+    // console.log(req.params.id)
     
     res.redirect(`/books/${req.params.id}`);
 }

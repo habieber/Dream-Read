@@ -13,6 +13,6 @@ router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
 router.get('/comments/:id/edit', ensureLoggedIn, commentsCtrl.edit);
 
 //PUT /books/:id
-router.put('/books/:id', ensureLoggedIn, commentsCtrl.update);
+router.put('/book/:id', ensureLoggedIn, commentsCtrl.update);
 
 module.exports = router;
