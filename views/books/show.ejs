@@ -32,8 +32,17 @@
             <td><%= c.content %></td>
             <td>
                   <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                    <button type="submit">🗑️</button>
+                    <button type="submit"><span class="material-symbols-outlined">
+                        delete
+                        </span></button>
                   </form>
+                  <td>
+                    <form action="/comments/<%= c._id %>/edit">
+                      <button type="submit"><span class="material-symbols-outlined">
+                        edit
+                        </span></button>
+                    </form>
+                </td>
               </td>
           </tr>
         <% }); %>

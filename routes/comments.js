@@ -9,4 +9,10 @@ router.post('/books/:id/comments', ensureLoggedIn, commentsCtrl.create);
 //DELETE /comments/:id
 router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
 
+//GET /comments/:id/edit
+router.get('/comments/:id/edit', ensureLoggedIn, commentsCtrl.edit);
+
+//PUT /books/:id
+router.put('/books/:id', ensureLoggedIn, commentsCtrl.update);
+
 module.exports = router;

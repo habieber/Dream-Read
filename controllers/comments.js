@@ -2,7 +2,9 @@ const Book = require('../models/book');
 
 module.exports = {
   create,
-  delete: deleteComment
+  delete: deleteComment,
+  edit,
+  update
 };
 
 async function create(req, res) {
@@ -29,4 +31,19 @@ async function deleteComment(req, res) {
     book.comments.remove(req.params.id);
     await book.save();
     res.redirect(`/books/${book._id}`);
-}   
+} 
+
+async function edit(req, res) {
+    const book = await Book.findOne({ 'comments._id': req.params.id });
+    const comment = book.comments
+    res.render('comments/edit', { title: 'Change Comment', book, comment })
+}
+
+async function update(req, res) {
+    console.log('inside the updated function')
+    const book = await Book.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id });
+    console.log(book)
+    console.log(req.params.id)
+    
+    res.redirect(`/books/${req.params.id}`);
+}

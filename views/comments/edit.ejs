@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<form id="add-comment-form"
+  action="/books/<%= book._id %>/?_method=PUT" method="POST">
+  <label>Comment:</label>
+  <input type="text" name="content" value ="<%= comment.content %>"></textarea><br>
+  <input type="submit" value="Update Comment">
+</form>
+
+<%- include('../partials/footer') %>
