@@ -51,8 +51,8 @@ async function show(req, res) {
 }
 
 async function edit(req, res) {
-    const book = await Book.getOne(req.params.id);
-    res.render('books/edit', { title: 'Edit Book', book })
+    const book = await Book.findById(req.params.id)
+    res.render('books/edit', { title: 'Change it up...', book })
 }
 
 async function update(req, res) {
