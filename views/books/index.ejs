@@ -19,7 +19,7 @@
         <td><%= b.author %></td>
         <td><%= b.datePublished %></td>
         <td><%= b.pageCount %></td>
-        <td><%= b.dateAdded %></td>
+        <td><%= b.createdAt.toLocaleDateString() %></td>
         <td><%= b.priority %></td>
         <td><a href="/books/<%= b._id %>">Details</a></td>
       </tr>

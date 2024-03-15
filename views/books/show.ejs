@@ -11,6 +11,9 @@
     <div><%= book.pageCount %></div>
     <div>Priority: </div>
     <div><%= book.priority %></div>
+    <form action="/books/<%= book.id %>/edit">
+        <button type="submit">Edit Book Details</button>
+    </form>
 </section>
 
 <% if (book.comments) { %>

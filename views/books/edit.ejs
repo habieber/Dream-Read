@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Book</h2>
+<form action="/books/<%= todo.id %>?_method=PUT" method="POST" autocomplete="off">
+<label>Title:
+    <input type="text" name="title">
+</label><br>
+<label>Author:
+    <input type="text" name="author">
+</label><br>
+<label>Year Published:
+    <input type="number" name="datePublished">
+</label><br>
+<label>Pages:
+    <input type="number" name="pageCount">
+</label><br>
+<label>Priority:
+<select name="priority">
+    <option value="low" selected>Low</option>
+    <option value="med">Med</option>
+    <option value="high">High</option>
+</select>
+</label><br>
+  <button type="submit">Update Book</button>
+</form>
+
+
+<%- include('../partials/footer') %>

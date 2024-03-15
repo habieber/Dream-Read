@@ -26,7 +26,10 @@ const bookSchema = new Schema({
         max: new Date().getFullYear()
     },
     pageCount: Number,
-    dateAdded: { type: Date, default: new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) },
+    dateAdded: { 
+        type: Date, 
+        // default: new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) 
+    },
     priority: { 
         type: String, 
         default: 'low',

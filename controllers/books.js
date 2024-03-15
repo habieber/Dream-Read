@@ -4,7 +4,9 @@ module.exports = {
     index,
     new: newBook,
     create,
-    show
+    show,
+    edit,
+    update
 }
 
 async function index(req, res) {
@@ -29,7 +31,7 @@ async function create(req, res) {
     req.body.userAvatar = req.user.avatar;
 
     req.body.dateAdded = new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})
-    req.body.datePublished = req.body.datePublished.trim();
+    console.log(req.body.dateAdded)
     req.body.pageCount = parseInt(req.body.pageCount)
 
     console.log(req.body)
@@ -46,4 +48,14 @@ async function show(req, res) {
     const book = await Book.findById(req.params.id);
     
     res.render('books/show', { title: 'Book Details', book })
+}
+
+async function edit(req, res) {
+    const book = await Book.getOne(req.params.id);
+    res.render('books/edit', { title: 'Edit Book', book })
+}
+
+async function update(req, res) {
+    Book.update(req.params.id, req.body)
+    res.redirect(`/books/${req.params.id}`);
 }
