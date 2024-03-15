@@ -21,13 +21,17 @@ const commentSchema = new Schema({
 const bookSchema = new Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
-    datePublished: Date,
+    datePublished: {
+        type: Number,
+        max: new Date().getFullYear()
+    },
     pageCount: Number,
-    dateAdded: { type: Date, default: new Date() },
+    dateAdded: { type: Date, default: new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) },
     priority: { 
         type: String, 
         default: 'low',
-        enum: ['low', 'med', 'high']
+        enum: ['low', 'med', 'high'],
+        required: true
     },
     comments: [commentSchema],
     user: {
