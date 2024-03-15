@@ -56,6 +56,7 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-    Book.update(req.params.id, req.body)
+    console.log(req.params.id)
+    await Book.updateOne(req.body)
     res.redirect(`/books/${req.params.id}`);
 }

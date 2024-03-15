@@ -22,6 +22,6 @@ router.get('/:id/edit', ensureLoggedIn, booksCtrl.edit);
 router.post('/', ensureLoggedIn, booksCtrl.create);
 
 //PUT /books
-router.put('/', ensureLoggedIn, booksCtrl.update)
+router.put('/:id', ensureLoggedIn, booksCtrl.update);
 
 module.exports = router;
