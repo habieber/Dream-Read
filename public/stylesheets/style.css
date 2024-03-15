@@ -19,7 +19,6 @@ body > main {
   align-items: center;
   background-color: #ffffff;
   padding: 20px;
-  overflow-y: scroll;
 }
 
 body > nav {
@@ -40,12 +39,12 @@ nav > a {
 }
 
 nav > a:hover:not(.active) {
-  color: white;
+  color: #ffffff;
   background-color: #424748;
 }
 
 nav > a.active {
-  color: white;
+  color: #ffffff;
   cursor: default;
 }
 
