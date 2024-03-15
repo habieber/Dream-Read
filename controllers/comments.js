@@ -1,7 +1,8 @@
 const Book = require('../models/book');
 
 module.exports = {
-  create
+  create,
+  delete: deleteComment
 };
 
 async function create(req, res) {
@@ -21,3 +22,11 @@ async function create(req, res) {
 
     res.redirect(`/books/${book._id}`);
 }
+
+async function deleteComment(req, res) {
+    const book = await Book.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id });
+    if (!book) return res.redirect('/books');
+    book.comments.remove(req.params.id);
+    await book.save();
+    res.redirect(`/books/${book._id}`);
+}   

@@ -6,4 +6,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // POST /books/:id/comments
 router.post('/books/:id/comments', ensureLoggedIn, commentsCtrl.create);
 
+//DELETE /comments/:id
+router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
+
 module.exports = router;

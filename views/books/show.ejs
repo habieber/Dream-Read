@@ -27,6 +27,11 @@
             <!-- .toLocaleDateString() provides a more friendly date format -->
             <td><%= c.createdAt.toLocaleDateString() %></td>
             <td><%= c.content %></td>
+            <td>
+                  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                    <button type="submit">🗑️</button>
+                  </form>
+              </td>
           </tr>
         <% }); %>
       </tbody>
