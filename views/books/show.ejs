@@ -1,41 +1,53 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-    <div>Title: </div>
-    <div><%= book.title %></div>
-    <div>Author: </div>
-    <div><%= book.author %></div>    
-    <div>Year Published: </div>
-    <div><%= book.datePublished %></div>
-    <div>Length: </div>
-    <div><%= book.pageCount %></div>
-    <div>Priority: </div>
-    <div><%= book.priority %></div>
-    <form action="/books/<%= book.id %>/edit">
+<div id="show-page" class="field">
+    <div>
+      <label class="label is-medium">Title:</label>
+      <div class="column is-12"><%= book.title %></div>
+    </div>
+    <div>
+      <label class="label is-medium">Author:</label>
+      <div class="column is-12"><%= book.author %></div>
+    </div>
+    <div>
+      <label class="label is-medium">Year Published:</label>
+      <div class="column is-12"><%= book.datePublished %></div>
+    </div>
+    <div>
+      <label class="label is-medium">Length:</label>
+      <div class="column is-12"><%= book.pageCount %></div>
+    </div>
+    <div>
+      <label class="label is-medium">Priority:</label>
+      <div class="column is-12"><%= book.priority %></div>
+    </div>
+    <div>
+      <form action="/books/<%= book.id %>/edit">
         <button class="button is-dark">Edit Book Details</button>
-    </form>
-</section>
+      </form>
+    </div>
+  </div>
 
 <% if (book.comments.length) { %>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Date</th>
           <th>Comment</th>
         </tr>
       </thead>
-      <tbody>
         <% book.comments.forEach(function(c) { %>
+          <tbody>
           <tr>
-            <!-- .toLocaleDateString() provides a more friendly date format -->
             <td><%= c.createdAt.toLocaleDateString() %></td>
             <td><%= c.content %></td>
             <td>
-                  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                    <button type="submit"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                  </form>
+              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <button type="submit">
+                <span class="material-symbols-outlined">
+                  delete</span>
+              </button>
+              </form>
                   <td>
                     <form action="/comments/<%= c._id %>/edit" method="GET">
                       <button type="submit"><span class="material-symbols-outlined">
@@ -49,24 +61,28 @@
       </tbody>
     </table>
   <% } else { %>
-    <h5>No Comments Yet</h5>
+    <h6>No Comments Yet</h6>
   <% } %>
 
-
-<form id="add-comment-form" method="POST"
+<div class="box">
+  <form id="add-comment-form" method="POST"
   action="/books/<%= book._id %>/comments">
-<div class="field">
-  <label class="label is-medium">Add Comment:</label>
-  <div class="control">
-    <textarea name="content"></textarea>
+  <div class="field">
+    <label class="label is-medium">Add Comment:</label>
+    <div class="control">
+      <textarea name="content"></textarea>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-dark">Add Comment</button>
+    </div>
   </div>
 </div>
 
-<div class="field">
-  <div class="control">
-    <button class="button is-dark">Add Comment</button>
-  </div>
-</div>
+
+
+
 
 
 </form>
