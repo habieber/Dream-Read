@@ -12,11 +12,11 @@
     <div>Priority: </div>
     <div><%= book.priority %></div>
     <form action="/books/<%= book.id %>/edit">
-        <button type="submit">Edit Book Details</button>
+        <button class="button is-dark">Edit Book Details</button>
     </form>
 </section>
 
-<% if (book.comments) { %>
+<% if (book.comments.length) { %>
     <table>
       <thead>
         <tr>
@@ -52,12 +52,23 @@
     <h5>No Comments Yet</h5>
   <% } %>
 
-<h2>Comments</h2>
+
 <form id="add-comment-form" method="POST"
   action="/books/<%= book._id %>/comments">
-  <label>Comment:</label>
-  <textarea name="content"></textarea><br>
-  <input type="submit" value="Add Comment">
+<div class="field">
+  <label class="label is-medium">Add Comment:</label>
+  <div class="control">
+    <textarea name="content"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <button class="button is-dark">Add Comment</button>
+  </div>
+</div>
+
+
 </form>
 
 <%- include('../partials/footer') %>

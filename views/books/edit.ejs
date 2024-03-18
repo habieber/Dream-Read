@@ -1,28 +1,53 @@
 <%- include('../partials/header') %>
 
-<h2>Edit Book</h2>
-<form action="/books/<%= book.id %>?_method=PUT" method="POST" autocomplete="on">
-<label>Title:
-    <input type="text" name="title" value="<%= book.title %>">
-</label><br>
-<label>Author:
-    <input type="text" name="author" value="<%= book.author %>">
-</label><br>
-<label>Year Published:
-    <input type="number" name="datePublished" value="<%= book.datePublished %>">
-</label><br>
-<label>Pages:
-    <input type="number" name="pageCount" value="<%= book.pageCount %>">
-</label><br>
-<label>Priority:
-<select name="priority">
-    <option value="low" <%= book.priority === 'low' ? 'selected' : '' %>>Low</option>
-    <option value="med" <%= book.priority === 'med' ? 'selected' : '' %>>Med</option>
-    <option value="high" <%= book.priority === 'high' ? 'selected' : '' %>>High</option>
-</select>
-</label><br>
-  <button type="submit">Update Book</button>
-</form>
+<h2 class="subtitle">Edit Book</h2>
 
+<form action="/books/<%= book.id %>?_method=PUT" method="POST" autocomplete="on"></form>
+<div class="field">
+    <label class="label is-medium">Title:</label>
+    <div class="control">
+        <input type="text" name="title" value="<%= book.title %>">
+    </div>
+</div>
+
+<div class="field">
+    <label class="label is-medium">Author:</label>
+    <div class="control">
+        <input type="text" name="author" value="<%= book.author %>">
+    </div>
+</div>
+
+<div class="field">
+    <label class="label is-medium">Year Published:</label>
+    <div class="control">
+        <input type="number" name="datePublished" value="<%= book.datePublished %>">
+    </div>
+</div>
+
+<div class="field">
+    <label class="label is-medium">Pages:</label>
+    <div class="control">
+        <input type="number" name="pageCount" value="<%= book.pageCount %>">
+    </div>
+</div>
+
+<div class="field has-addons">
+    <label class="label is-medium">Priority:</label>
+    <div class="control is-expanded">
+        <select name="priority">
+            <option value="low" <%= book.priority === 'low' ? 'selected' : '' %>>Low</option>
+            <option value="med" <%= book.priority === 'med' ? 'selected' : '' %>>Med</option>
+            <option value="high" <%= book.priority === 'high' ? 'selected' : '' %>>High</option>
+        </select>
+    </div>
+</div>
+
+<div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary">Update Book</button>
+    </div>
+</div>
+
+</form>
 
 <%- include('../partials/footer') %>

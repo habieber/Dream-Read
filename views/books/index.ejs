@@ -1,19 +1,21 @@
 <%- include('../partials/header') %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Year Published</th>
-      <th>Pages</th>
-      <th>Date Added</th>
-      <th>Priority</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th title="Title">Title</th>
+        <th title="Author">Author</th>
+        <th title="Year Published">Year Published</th>
+        <th title="Pages">Pages</th>
+        <th title="Date Added">Date Added</th>
+        <th title="Priority">Priority</th>
+        <th title="Details">Details</th>
+      </tr>
+    </thead>
     <% books.forEach(function(b) { %>
+    <tbody class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth
+    ">
       <tr>
         <td><%= b.title %></td>
         <td><%= b.author %></td>
@@ -21,10 +23,10 @@
         <td><%= b.pageCount %></td>
         <td><%= b.createdAt.toLocaleDateString() %></td>
         <td><%= b.priority %></td>
-        <td><a href="/books/<%= b._id %>">Details</a></td>
+        <td><a class="button is-primary is-light is-responsive" href="/books/<%= b._id %>">Details</a></td>
       </tr>
-    <% }) %>
-  </tbody>
-</table>
-
+      <% }) %>
+    </tbody>
+  </table>
+</div>
 <%- include('../partials/footer') %>
