@@ -40,10 +40,10 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-    console.log('inside the updated function')
-    // const book = await Book.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id });
-    // console.log(book)
-    // console.log(req.params.id)
-    
-    res.redirect(`/books/${req.params.id}`);
+    const book = await Book.findOne({ 'comments._id': req.params.id });
+    const comment = book.comments.filter((c) => c._id.toString() === req.params.id.toString())
+    comment[0].content = req.body.content
+    await book.save();
+
+    res.redirect(`/books/${book._id}`, book, comment);
 }

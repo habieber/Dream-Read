@@ -12,7 +12,7 @@ router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
 //GET /comments/:id/edit
 router.get('/comments/:id/edit', ensureLoggedIn, commentsCtrl.edit);
 
-//PUT /books/:id
+//PUT /book/:id
 router.put('/book/:id', ensureLoggedIn, commentsCtrl.update);
 
 module.exports = router;
