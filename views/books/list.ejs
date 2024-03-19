@@ -17,7 +17,9 @@
         <tr>
             <td class="image">
             <figure class="image">
-                <img src="<%= b.volumeInfo.imageLinks.thumbnail %>" alt=""> 
+                <% if (b.volumeInfo.imageLinks) { %>
+                <img src="<%= b.volumeInfo.imageLinks.thumbnail %>" alt=" "> 
+                <% } %>
             </figure>
             </td>
             <td><%= b.volumeInfo.title %></td>

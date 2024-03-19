@@ -18,7 +18,7 @@ router.get('/books/list', async function(req, res, next) {
     .then(res => res.json())
 
     console.log(bookData)
-  res.render('books/list', { bookData, title: `${bookTitle}` })
+  res.render('books/list', { bookData, title: `Results for "${bookTitle}"` })
 })
 
 router.get('/auth/google', passport.authenticate(
