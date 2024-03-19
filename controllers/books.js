@@ -6,7 +6,8 @@ module.exports = {
     create,
     show,
     edit,
-    update
+    update,
+    delete: deleteBook
 }
 
 async function index(req, res) {
@@ -58,4 +59,9 @@ async function edit(req, res) {
 async function update(req, res) {
     await Book.updateOne(req.body)
     res.redirect(`/books/${req.params.id}`);
+}
+
+async function deleteBook(req, res) {
+    await Book.findByIdAndDelete(req.params.id)
+    res.redirect('/books')
 }

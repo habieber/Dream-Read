@@ -18,6 +18,9 @@ router.get('/:id', ensureLoggedIn, booksCtrl.show);
 //GET /books/:id/edit
 router.get('/:id/edit', ensureLoggedIn, booksCtrl.edit);
 
+//DELETE books/book/:id
+router.delete('/book/:id', ensureLoggedIn, booksCtrl.delete);
+
 //POST /books
 router.post('/', ensureLoggedIn, booksCtrl.create);
 

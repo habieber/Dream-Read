@@ -4,6 +4,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         <th title="Title">Title</th>
         <th title="Author">Author</th>
         <th title="Year Published">Year Published</th>
@@ -17,13 +18,21 @@
     <tbody class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth
     ">
       <tr>
+        <td>
+          <form action="/books/book/<%= b._id %>?_method=DELETE" method="POST">
+          <button class="button is-rounded is-small" type="submit">
+            <span class="material-symbols-outlined icon is-small">
+              delete</span>
+          </button>
+          </form>
+        </td>
         <td><%= b.title %></td>
         <td><%= b.author %></td>
         <td><%= b.datePublished %></td>
         <td><%= b.pageCount %></td>
         <td><%= b.createdAt.toLocaleDateString() %></td>
         <td><%= b.priority %></td>
-        <td><a class="button is-primary is-light is-responsive" href="/books/<%= b._id %>">Details</a></td>
+        <td><a class="button is-light is-responsive" href="/books/<%= b._id %>">Details</a></td>
       </tr>
       <% }) %>
     </tbody>
