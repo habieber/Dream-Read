@@ -1,18 +1,35 @@
 <%- include('../partials/header') %>
+<div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+            <th title="Cover">Cover</th>
+            <th title="Title">Title</th>
+            <th title="Author">Author</th>
+            <th title="Year Published">Published</th>
+            <th title="Description">Description</th>
+            <th title="Pages">Pages</th>
+        </tr>
+      </thead>
+      <% bookData.items.forEach(function(b) { %>
+      <tbody class="table is-bordered is-striped is-fullwidth
+      ">
+        <tr>
+            <td class="image">
+            <figure class="image">
+                <img src="<%= b.volumeInfo.imageLinks.thumbnail %>" alt=""> 
+            </figure>
+            </td>
+            <td><%= b.volumeInfo.title %></td>
+            <td><%= b.volumeInfo.authors %></td>
+            <td><%= b.volumeInfo.publishedDate %></td>
+            <td><%= b.volumeInfo.description %></td>
+            <td><%= b.volumeInfo.pageCount %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
 
-<hr>
-<div class="row col-xs-8 col-xs-offset-2">
-  <% if (bookData) { %>
-    <% bookData.items.forEach((b) => { %>
-
-    <p name=“title”><%= b.volumeInfo.title %></p>
-    <% }) %>
-
-  <% } else { %>
-    <h3 class="text-center text-info">
-      Submit a Book Title!
-    </h3>
-  <% } %>
-</div>
 
 <%- include('../partials/footer') %>
