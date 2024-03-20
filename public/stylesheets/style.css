@@ -82,8 +82,13 @@ main {
   gap: 2rem;
 }
 
+#bookmark-icon {
+  border: transparent;
+  background-color: transparent;
+}
+
 #bookmark-icon:hover {
-  
+  background-color: white;
 }
 
 .has-text-centered {

@@ -27,9 +27,13 @@
               <input type="hidden" name="datePublished" value="<%= b.volumeInfo.publishedDate %>">              
               <input type="hidden" name="pageCount" value="<%= b.volumeInfo.pageCount %>">              
 
-              <button class="button is-inverted">
-              <span id="bookmark-icon" class="icon is-clickable is-hoverable"><i class="fa-regular fa-bookmark"></i></span>
-              </button></form>
+              <!-- <button class="button is-inverted"> -->
+              <button id="bookmark-icon" class="icon is-medium">
+                  <span class="icon is-clickable"><i class="fa-regular fa-bookmark"></i></span>
+              </button>
+              
+              <!-- </button> -->
+            </form>
           </td>
           <% } %>
           <td class="image">
