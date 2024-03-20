@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2 class="subtitle">Add a Book to your shelf</h2>
+<h2 class="subtitle">Add a book to your shelf</h2>
 
 <form class="box" action="/books" method="POST">
     <div class="field">
@@ -46,6 +46,23 @@
         <div class="control">
         <button class="button is-dark">Add Book</button>
         </div>
+    </div>
+</form>
+
+<h2>OR</h2><br>
+
+<form class="box" action="/books/list" method="GET">
+    <div class="has-text-centered">
+        <label class="title">Browse Books</label>
+    </div>
+    <div class="field has-addons">
+          <div class="control">
+            <input class="input is-large" type="text" name="volume"
+              placeholder="Enter a Title">
+          </div>
+          <div class="control">
+            <button class="button is-large is-dark" type="submit">Go!</button>
+          </div>
     </div>
 </form>
 

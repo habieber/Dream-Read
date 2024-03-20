@@ -3,30 +3,36 @@
     <table class="table">
       <thead>
         <tr>
-            <th title="Cover">Cover</th>
-            <th title="Title">Title</th>
-            <th title="Author">Author</th>
-            <th title="Year Published">Published</th>
-            <th title="Description">Description</th>
-            <th title="Pages">Pages</th>
+          <% if(user) { %>
+          <th title="Save">Save</th>
+          <% } %>
+          <th title="Cover">Cover</th>
+          <th title="Title">Title</th>
+          <th title="Author">Author</th>
+          <th title="Year Published">Published</th>
+          <th title="Description">Description</th>
+          <th title="Pages">Pages</th>
         </tr>
       </thead>
       <% bookData.items.forEach(function(b) { %>
-      <tbody class="table is-bordered is-striped is-fullwidth
+      <tbody class="table is-bordered is-striped
       ">
         <tr>
-            <td class="image">
-            <figure class="image">
-                <% if (b.volumeInfo.imageLinks) { %>
-                <img src="<%= b.volumeInfo.imageLinks.thumbnail %>" alt=" "> 
-                <% } %>
-            </figure>
-            </td>
-            <td><%= b.volumeInfo.title %></td>
-            <td><%= b.volumeInfo.authors %></td>
-            <td><%= b.volumeInfo.publishedDate %></td>
-            <td><%= b.volumeInfo.description %></td>
-            <td><%= b.volumeInfo.pageCount %></td>
+          <% if(user) { %>
+          <td><a href="/books" method="POST"><span id="bookmark-icon" class="icon is-clickable is-hoverable"><i class="fa-regular fa-bookmark"></i></span></a></td>
+          <% } %>
+          <td class="image">
+          <figure class="image">
+              <% if (b.volumeInfo.imageLinks) { %>
+              <img src="<%= b.volumeInfo.imageLinks.thumbnail %>" alt=" "> 
+              <% } %>
+          </figure>
+          </td>
+          <td><%= b.volumeInfo.title %></td>
+          <td><%= b.volumeInfo.authors %></td>
+          <td><%= b.volumeInfo.publishedDate %></td>
+          <td class="is-clipped"><%= b.volumeInfo.description %></td>
+          <td><%= b.volumeInfo.pageCount %></td>
         </tr>
         <% }) %>
       </tbody>

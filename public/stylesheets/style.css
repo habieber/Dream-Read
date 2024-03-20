@@ -53,15 +53,6 @@ main {
   height: 30px;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  width: 34px;
-}
-
 #title {
   display: flex;
   justify-content: center;
@@ -83,6 +74,14 @@ main {
 
 #priority {
   gap: 2rem;
+}
+
+#bookmark-icon:hover {
+  background-color: white;
+}
+
+.has-text-centered {
+  padding-bottom: 1.5rem;
 }
 
 @media screen and (max-wdith: 1023px) {
