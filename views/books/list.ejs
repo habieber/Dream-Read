@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<div class="table-container">
-    <table class="table">
-      <thead>
+<div class="table-container is-mobile">
+    <table class="table is-mobile">
+      <thead class="is-mobile">
         <tr>
           <% if(user) { %>
           <th title="Save">Save</th>
@@ -15,8 +15,7 @@
         </tr>
       </thead>
       <% bookData.items.forEach(function(b) { %>
-      <tbody class="table is-bordered is-striped
-      ">
+      <tbody class="table is-bordered is-narrow is-mobile">
         <tr>
           <% if(user) { %>
           <td>

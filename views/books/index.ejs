@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<div class="table-container">
-  <table class="table">
+<div class="table-container is-mobile">
+  <table class="table is-mobile">
     <thead>
       <tr>
         <th></th>
@@ -15,8 +15,7 @@
       </tr>
     </thead>
     <% books.forEach(function(b) { %>
-    <tbody class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth
-    ">
+    <tbody class="table is-bordered is-mobile">
       <tr>
         <td>
           <form action="/books/book/<%= b._id %>?_method=DELETE" method="POST">
