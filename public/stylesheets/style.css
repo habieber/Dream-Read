@@ -77,7 +77,7 @@ main {
 }
 
 #bookmark-icon:hover {
-  background-color: white;
+  background-color: black;
 }
 
 .has-text-centered {
@@ -86,6 +86,13 @@ main {
 
 .navbar-brand {
   align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  letter-spacing: .5rem;
+}
+
+.navbar-menu {
+  background-color: #ae91bf;
 }
 
 @media screen and (max-wdith: 1023px) {
