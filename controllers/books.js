@@ -7,7 +7,27 @@ module.exports = {
     show,
     edit,
     update,
-    delete: deleteBook
+    delete: deleteBook,
+    save
+}
+
+async function save(req, res) {
+    console.log(req.body)
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
+
+    req.body.dateAdded = new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})
+    
+    req.body.pageCount = parseInt(req.body.pageCount)
+
+    try {
+        await Book.create(req.body)
+        res.redirect('/books')
+    } catch (err) {
+        console.log(err);
+        res.render('books/new', ( {title: '', errorMsg: ''}))
+    }
 }
 
 async function index(req, res) {

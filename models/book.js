@@ -22,7 +22,7 @@ const bookSchema = new Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
     datePublished: {
-        type: Number,
+        type: String,
         max: new Date().getFullYear()
     },
     pageCount: Number,

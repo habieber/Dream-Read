@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-top">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +11,33 @@
   <title><%= title %></title>
 </head>
 
-  <nav class="navbar">
-    <div class="container is-fullhd">
-      <div id="navMenu" >
-        <div class="navbar-start">
-          <span class="icon">
-            <i class="fa-regular fa-moon"></i>
-            <i class="fa-solid fa-book"></i>
-          </span>
-          <a class="navbar-item" href="/">HOME</a>
-        </div>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <span class="icon navbar-item">
+        <i class="fa-regular fa-moon"></i>
+        <i class="fa-solid fa-book"></i>
+      </span>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-        <div class="navbar-end">
-          <% if (user) { %>
-            <a class="navbar-item" href="/books">BOOKSHELF</a>
-            <a class="navbar-item" href="/books/new">ADD BOOK</a>
-            <a class="navbar-item" href="/logout">LOG OUT</a>
-            <% } else { %>
-            <a class="navbar-item" href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-            <% } %>
-        </div>
-
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">HOME</a>
+        <% if (user) { %>
+        <a class="navbar-item" href="/books">BOOKSHELF</a>
+        <a class="navbar-item" href="/books/new">ADD BOOK</a>
       </div>
+    </div>
+
+    <div class="navbar-end">
+      <a class="navbar-item" href="/logout">LOG OUT</a>
+      <% } else { %>
+      <a class="navbar-item" href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
     </div>
 </nav>
   <main>
