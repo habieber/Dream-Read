@@ -1,10 +1,19 @@
 <%- include('../partials/header') %>
 
-<form id="add-comment-form"
+<form class="box" id="add-comment-form"
   action="/book/<%= comment[0]._id %>?_method=PUT" method="POST">
-  <label>Comment:</label>
-  <input type="text" name="content" value ="<%= comment[0].content %>"></textarea><br>
-  <input type="submit" value="Update Comment">
+  <div class="has-text-centered">
+    <label class="label">Comment:</label>
+  </div>
+  <div class="field">
+    <div class="conrol">
+      <input type="text" name="content" value ="<%= comment[0].content %>"></input>
+    </div><br>
+    <div class="control has-text-centered">
+      <button class="button is-small is-dark" type="submit">Update Comment</button>
+    </div>
+  </div>
+
 </form>
 
 <%- include('../partials/footer') %>

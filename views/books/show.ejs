@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div id="show-page" class="field">
+<div id="show-page" class="box has-text-centered">
     <div>
       <label class="label is-medium">Title:</label>
       <div class="column is-12"><%= book.title %></div>
@@ -22,7 +22,7 @@
       <div class="column is-12"><%= book.priority %></div>
     </div>
     <div>
-      <form action="/books/<%= book.id %>/edit">
+      <form class="form has-text-centered" action="/books/<%= book.id %>/edit">
         <button class="button is-dark">Edit Book Details</button>
       </form>
     </div>
@@ -44,8 +44,6 @@
             <td>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
               <button class="delete is-medium" type="submit">
-                <!-- <span class="material-symbols-outlined">
-                  delete</span> -->
               </button>
               </form>
             </td>
