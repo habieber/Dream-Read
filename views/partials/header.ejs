@@ -13,10 +13,9 @@
   
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <span class="icon navbar-item">
-        <i class="fa-regular fa-moon"></i>
-        <i class="fa-solid fa-book"></i>
-      </span>
+      <a class="navbar-item" href="/"><span class="icon is-small navbar-item">
+        <i class="fa-solid fa-home"></i>
+      </span></a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -26,7 +25,6 @@
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/">HOME</a>
         <% if (user) { %>
         <a class="navbar-item" href="/books">BOOKSHELF</a>
         <a class="navbar-item" href="/books/new">ADD BOOK</a>
