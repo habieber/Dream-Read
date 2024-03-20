@@ -20,13 +20,10 @@
       <tr>
         <td>
           <form action="/books/book/<%= b._id %>?_method=DELETE" method="POST">
-          <button class="button is-rounded is-small" type="submit">
-            <span class="material-symbols-outlined icon is-small">
-              delete</span>
-          </button>
+          <button class="delete is-medium" type="submit"></button>
           </form>
         </td>
-        <td><%= b.title %></td>
+        <td class="book-title"><%= b.title %></td>
         <td><%= b.author %></td>
         <td><%= b.datePublished %></td>
         <td><%= b.pageCount %></td>

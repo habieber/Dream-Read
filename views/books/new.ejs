@@ -2,51 +2,51 @@
 
 <h2 class="subtitle">Add a Book to your shelf</h2>
 
-<form action="/books" method="POST">
-<div class="field">
-    <label class="label is-medium">Title:</label>
-    <div class="control">
-        <input type="text" name="title">
+<form class="box" action="/books" method="POST">
+    <div class="field">
+        <label class="label is-medium">Title</label>
+        <div class="control">
+            <input type="text" name="title">
+        </div>
     </div>
-</div>
 
-<div class="field">
-    <label class="label is-medium">Author:</label>
-    <div class="control">
-        <input type="text" name="author">
+    <div class="field">
+        <label class="label is-medium">Author</label>
+        <div class="control">
+            <input type="text" name="author">
+        </div>
     </div>
-</div>
 
-<div class="field">
-    <label class="label is-medium">Year Published:</label>
-    <div class="control">
-        <input type="text" name="datePublished">
+    <div class="field">
+        <label class="label is-medium">Year Published</label>
+        <div class="control">
+            <input type="text" name="datePublished">
+        </div>
     </div>
-</div>
 
-<div class="field">
-    <label class="label is-medium">Pages:</label>
-    <div class="control">
-        <input type="number" name="pageCount">
+    <div class="field">
+        <label class="label is-medium">Pages</label>
+        <div class="control">
+            <input type="number" name="pageCount">
+        </div>
     </div>
-</div>
 
-<div class="field has-addons">
-    <label class="label is-medium">Priority:</label>
-    <div class="control is-expanded">
-        <select name="priority">
-            <option value="low" selected>Low</option>
-            <option value="med">Med</option>
-            <option value="high">High</option>
-        </select>
+    <div id="priority" class="field has-addons">
+        <label class="label is-medium">Priority</label>
+        <div class="control is-expanded">
+            <select class="select is-small" name="priority">
+                <option value="low" selected>Low</option>
+                <option value="med">Med</option>
+                <option value="high">High</option>
+            </select>
+        </div>
     </div>
-</div>
 
-<div class="field is-grouped">
-    <div class="control">
-      <button class="button is-dark">Add Book</button>
+    <div class="field is-grouped">
+        <div class="control">
+        <button class="button is-dark">Add Book</button>
+        </div>
     </div>
-</div>
 </form>
 
 <p><%= errorMsg %></p>

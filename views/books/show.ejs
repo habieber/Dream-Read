@@ -32,28 +32,32 @@
     <table class="table">
       <thead>
         <tr>
+          <th></th>
           <th>Date</th>
           <th>Comment</th>
+          <th></th>
         </tr>
       </thead>
         <% book.comments.forEach(function(c) { %>
           <tbody>
           <tr>
-            <td><%= c.createdAt.toLocaleDateString() %></td>
-            <td><%= c.content %></td>
             <td>
               <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-              <button type="submit">
-                <span class="material-symbols-outlined">
-                  delete</span>
+              <button class="delete is-medium" type="submit">
+                <!-- <span class="material-symbols-outlined">
+                  delete</span> -->
               </button>
               </form>
             </td>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td><%= c.content %></td>
             <td>
               <form action="/comments/<%= c._id %>/edit" method="GET">
-                <button type="submit"><span class="material-symbols-outlined">
+                <button id="edit-comment" class="button is-small is-rounded" type="submit">
+                  <span class="material-symbols-outlined">
                   edit
-                  </span></button>
+                  </span>
+                </button>
               </form>
               </td>
           </tr>

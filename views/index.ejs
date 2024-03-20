@@ -4,14 +4,16 @@
   <p>In a perfect world, we would read all the books we want, right when we want to read them. Unfortunately, we have to do other things, like work jobs and meet our basic human needs, so our dream reading lists grow. Dream Read is a space to hold onto the hope that you’ll eventually read that book your therapist recommended two years ago AND keep up with your book club’s agenda. Organize that TBR list so that you feel like you’re doing something with it!</p>
 </div>
 
+<form action="/books/list" method="GET"></form>
 <div class="field has-addons">
-    <form action="/books/list" method="GET">
       <div class="control">
-        <input type="text" name="volume"
+        <input class="input is-large" type="text" name="volume"
           placeholder="Enter a Title">
-        <button class="button is-dark" type="submit">Go!</button>
       </div>
-    </form>
+      <div class="control">
+        <button class="button is-large is-dark" type="submit">Go!</button>
+      </div>
 </div>
+</form>
 
 <%- include('./partials/footer') %>
