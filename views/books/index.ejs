@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<% if (user) { %>
+  
 <div class="table-container is-mobile">
   <table id="bookshelf" class="table is-mobile">
     <thead>
@@ -16,6 +18,7 @@
       </tr>
     </thead>
     <% books.forEach(function(b) { %>
+    <% if(user?._id.equals(b.user)) { %>
     <tbody class="table is-bordered is-mobile">
       <tr>
         <td>
@@ -36,8 +39,12 @@
         <td><%= b.priority %></td>
         <td><a class="button is-light is-responsive" href="/books/<%= b._id %>">Details</a></td>
       </tr>
+      <% } %>
       <% }) %>
     </tbody>
   </table>
 </div>
+
+<% } %>
+
 <%- include('../partials/footer') %>

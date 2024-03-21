@@ -20,6 +20,7 @@ async function save(req, res) {
 
     try {
         await Book.create(req.body)
+        console.log(req.body.user)
         res.redirect('/books')
     } catch (err) {
         console.log(err);
