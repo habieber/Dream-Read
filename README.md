@@ -25,6 +25,8 @@
 - Google Books API
 - HTML
 - CSS
+- Trello
+- Lucidchart
 - Heroku
 
 # Getting Started
