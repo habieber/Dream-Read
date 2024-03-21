@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
 <% if (user) { %>
-  
+
 <div class="table-container is-mobile">
   <table id="bookshelf" class="table is-mobile">
-    <thead>
+    <thead class="table is-mobile">
       <tr>
         <th></th>
         <th title="Cover">Cover</th>
@@ -21,7 +21,7 @@
     <% if(user?._id.equals(b.user)) { %>
     <tbody class="table is-bordered is-mobile">
       <tr>
-        <td>
+        <td id="delete-book-btn">
           <form action="/books/book/<%= b._id %>?_method=DELETE" method="POST">
           <button class="delete is-medium" type="submit"></button>
           </form>

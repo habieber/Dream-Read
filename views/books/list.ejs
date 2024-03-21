@@ -19,9 +19,7 @@
         <tr>
           <% if(user) { %>
           <td>
-            
             <form action="/books/save" method="POST">
-
               <input type="hidden" name="title" value="<%= b.volumeInfo.title %>">
               <input type="hidden" name="author" value="<%= b.volumeInfo.authors %>">              
               <input type="hidden" name="datePublished" value="<%= b.volumeInfo.publishedDate %>">              
@@ -29,12 +27,9 @@
               <% if (b.volumeInfo.imageLinks) { %>     
               <input type="hidden" name="coverPhoto" value="<%= b.volumeInfo.imageLinks.thumbnail %>">         
               <% } %>
-              <!-- <button class="button is-inverted"> -->
               <button id="bookmark-icon" class="icon is-medium">
                   <span class="icon is-clickable"><i class="fa-regular fa-bookmark"></i></span>
               </button>
-              
-              <!-- </button> -->
             </form>
           </td>
           <% } %>

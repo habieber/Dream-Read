@@ -1,10 +1,16 @@
 <%- include('./partials/header') %>
 
-<div class="content is-large">
-  <p>In a perfect world, we would read all the books we want, right when we want to read them. Unfortunately, we have to do other things, like work jobs and meet our basic human needs, so our dream reading lists grow. Dream Read is a space to hold onto the hope that you’ll eventually read that book your therapist recommended two years ago AND keep up with your book club’s agenda. Organize that TBR list so that you feel like you’re doing something with it!</p>
+<div class="home-container">
+  <div class="content is-large">
+    <p>In a perfect world, we would read all the books we want, right when we want to read them.</p>
+    <p>Unfortunately, we have to do other things, like work jobs and meet our basic human needs, so our dream reading lists grow.</p> 
+    <p>Dream Read is a space to hold onto the hope that you’ll eventually read that book your therapist recommended two years ago AND keep up with your book club’s agenda.</p>
+    <p>Organize that TBR list so that you feel like you’re doing something with it!</p>
+  </div>
 </div>
 
-<form class="form" action="/books/list" method="GET">
+
+<form id="search-bar" class="form" action="/books/list" method="GET">
 <div class="field has-addons">
       <div class="control">
         <input class="input is-large" type="text" name="volume"

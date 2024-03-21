@@ -17,7 +17,6 @@ router.get('/books/list', async function(req, res, next) {
   const bookData = await fetch(`${ROOT_URL}?q=${bookTitle}`)
     .then(res => res.json())
 
-    console.log(bookData)
   res.render('books/list', { bookData, title: `Results for "${bookTitle}"` })
 })
 

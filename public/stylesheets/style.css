@@ -9,7 +9,22 @@
 }
 
 html {
-  background-color: #d3c9d8;
+  /* background-color: #d3c9d8; */
+  height: 100%;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 180%;
+  background-image: url("https://media.istockphoto.com/id/1085770318/photo/wooden-brown-books-shelves-with-a-lamp.jpg?s=612x612&w=0&k=20&c=lmEO_bnmL8uv2u-1OrSfDQ1lVkxGROJ3HzO-JjDu9c0=");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.3;
+  z-index: 1;
 }
 
 body {
@@ -28,12 +43,8 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d3c9d8;
   padding: 20px;
-}
-
-main {
-  background-color: #d3c9d8;
+  z-index: 6;
 }
 
 .table {
@@ -65,8 +76,8 @@ main {
   font-size: 2em;
 }
 
-.navbar {
-  background-color: #ae91bf;
+.navbar, .navbar-menu {
+  background-color:  #b8a3c2;
 }
 
 .book-title {
@@ -101,10 +112,6 @@ main {
   letter-spacing: .5rem;
 }
 
-.navbar-menu {
-  background-color: #ae91bf;
-}
-
 .table-container {
   overflow-wrap: break-word;
   max-width: 100%;
@@ -112,6 +119,33 @@ main {
 
 .table {
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#bookshelf {
+  border-radius: 3%;
+}
+
+#footer {
+  justify-content: end;
+}
+
+#delete-book-btn {
+  align-items: center;
+  text-align: center;
+}
+
+.home-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(211, 201, 216, .8);
+  border-radius: 5%;
+  padding: 1rem;
+}
+
+#search-bar {
+  padding: 1rem;
 }
 
 @media screen and (max-wdith: 1023px) {

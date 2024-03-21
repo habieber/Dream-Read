@@ -13,8 +13,7 @@ async function create(req, res) {
     req.body.userAvatar = req.user.avatar;
 
     const book = await Book.findById(req.params.id);
-    console.log(book)
-    console.log(req.body)
+    
     book.comments.push(req.body);
     try {
     await book.save();

@@ -20,7 +20,7 @@ async function save(req, res) {
 
     try {
         await Book.create(req.body)
-        console.log(req.body.user)
+    
         res.redirect('/books')
     } catch (err) {
         console.log(err);
@@ -73,7 +73,7 @@ async function edit(req, res) {
 
 async function update(req, res) {
     await Book.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect(`/books/${req.params.id}`);
+    res.redirect('/books');
 }
 
 async function deleteBook(req, res) {
