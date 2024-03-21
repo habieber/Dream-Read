@@ -29,7 +29,7 @@
 
 # Getting Started
 
-[Click to Use Dream Read!](your deployment url here)
+[Click to Use Dream Read!](https://dream-read-95c5d3ae821f.herokuapp.com/)
 
 [Click to View Project Planning on Trello](https://trello.com/invite/b/mKjkpUB3/ATTI0a978d6c4386881b19a5e376f11246098C9C7056/project-2)
 
