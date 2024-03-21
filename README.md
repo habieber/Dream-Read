@@ -8,7 +8,7 @@
   Go ahead, use Dream Read and make your reading goals a reality.
 
 
-# Screenshot
+# Screenshots
 
 <img src="/Dream-Read-Home.png">
 <img src="/Dream-Read-Search.png">
