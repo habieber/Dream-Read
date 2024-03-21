@@ -8,23 +8,25 @@
   max-width: 100%;
 }
 
-html {
-  /* background-color: #d3c9d8; */
-  height: 100%;
+.background-image {
+  overflow: auto;
+  position: relative;
 }
 
-.background-image {
-  position: absolute;
+.background-image::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 180%;
+  min-height: 100%;
+  display: block;
   background-image: url("https://media.istockphoto.com/id/1085770318/photo/wooden-brown-books-shelves-with-a-lamp.jpg?s=612x612&w=0&k=20&c=lmEO_bnmL8uv2u-1OrSfDQ1lVkxGROJ3HzO-JjDu9c0=");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: repeat;
   opacity: 0.3;
-  z-index: 1;
+  z-index: -1;
 }
 
 body {
@@ -34,7 +36,6 @@ body {
   flex-direction: column;
   align-items: center;
   line-height: 1.5;
-  background-color: #d3c9d8;
   max-width: 100%;
 }
 
