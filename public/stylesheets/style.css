@@ -110,6 +110,10 @@ main {
   max-width: 100%;
 }
 
+.table {
+  text-align: center;
+}
+
 @media screen and (max-wdith: 1023px) {
   .navbar-menu {
     display: visible;
