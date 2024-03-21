@@ -17,7 +17,7 @@
 
 # Technologies Used
 
-- Node
+- Node.js
 - Express JS
 - MongoDB
 - Mongoose
@@ -25,6 +25,7 @@
 - Google Books API
 - HTML
 - CSS
+- Heroku
 
 # Getting Started
 
