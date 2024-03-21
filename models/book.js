@@ -43,7 +43,11 @@ const bookSchema = new Schema({
         required: true
     },
     userName: String,
-    userAvatar: String
+    userAvatar: String,
+    coverPhoto: {
+        type: String,
+        default: 'https://books.google.com/books/content?id=pXNEMQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api'
+    }
 },
 {
     timestamps: true

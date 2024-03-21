@@ -12,13 +12,10 @@ module.exports = {
 }
 
 async function save(req, res) {
-    console.log(req.body)
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
     req.body.dateAdded = new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})
-    
     req.body.pageCount = parseInt(req.body.pageCount)
 
     try {
@@ -50,12 +47,9 @@ async function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
     req.body.dateAdded = new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})
-    console.log(req.body.dateAdded)
     req.body.pageCount = parseInt(req.body.pageCount)
-
-    console.log(req.body)
+    
     try {
         await Book.create(req.body)
         res.redirect('/books')
@@ -77,7 +71,7 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-    await Book.updateOne(req.body)
+    await Book.findByIdAndUpdate(req.params.id, req.body)
     res.redirect(`/books/${req.params.id}`);
 }
 

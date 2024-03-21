@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th></th>
+        <th title="Cover">Cover</th>
         <th title="Title">Title</th>
         <th title="Author">Author</th>
         <th title="Year Published">Published</th>
@@ -21,6 +22,11 @@
           <form action="/books/book/<%= b._id %>?_method=DELETE" method="POST">
           <button class="delete is-medium" type="submit"></button>
           </form>
+        </td>
+        <td class="image">
+          <figure class="image">
+              <img src="<%= b.coverPhoto %>" alt=" "> 
+          </figure>
         </td>
         <td class="book-title"><%= b.title %></td>
         <td><%= b.author %></td>
