@@ -149,6 +149,10 @@ body > main {
   padding: 1rem;
 }
 
+p {
+  font-size: 1.1rem;
+}
+
 @media screen and (max-wdith: 1023px) {
   .navbar-menu {
     display: visible;
