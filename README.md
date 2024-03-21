@@ -10,8 +10,10 @@
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="/Dream-Read-Home.png">
+<img src="/Dream-Read-Search.png">
+<img src="/Dream-Read-Add.png">
+<img src="/Dream-Read-Shelf.png">
 
 # Technologies Used
 
@@ -34,6 +36,7 @@
 
 - Implement a filter feature to access books on your shelf more easily
 - Add a feature to adjust priority immediately when saving books to your shelf from API search
+- Add a feature to upload your own cover photo for custom book entries
 - Add a feature to categorize books with custom categories (personal, work, book club, etc)
 - Add more styling to each page for more intuitive navigation (links to different pages)
 - Addd drag and drop feature to reorganize your bookshelf
