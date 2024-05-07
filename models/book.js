@@ -28,7 +28,7 @@ const bookSchema = new Schema({
     pageCount: Number,
     dateAdded: { 
         type: Date, 
-        // default: new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) 
+        default: new Date().toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) 
     },
     priority: { 
         type: String, 
